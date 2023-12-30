@@ -1,0 +1,229 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* modal window */
+
+.modal__window {
+  display: none;
+  background-color: #ffffff;
+  width: 90vw;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.modal__wrapper {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+
+.modal__request-text {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 33px;
+}
+
+.modal__permission {
+  display: flex;
+  font-size: 25px;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.modal__location-svg {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modal__btns {
+  display: flex;
+  justify-content: end;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.modal__access-allowed {
+  margin-right: 11px;
+}
+
+.modal__access-allowed,
+.modal__access-denied {
+  color: #0057FF;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+padding: 3px 15px;
+}
+
+.modal__access-allowed:focus,
+.modal__access-denied:focus {
+  outline: 3px solid rgba(51, 51, 51, 0.4);
+}
+
+.modal__access-allowed:hover,
+.modal__access-denied:hover {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+
+.modal__access-allowed:active,
+.modal__access-denied:active {
+  outline: transparent;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.2);
+}
+
+/* widget */
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+  max-width: 760px;
+  width: 100%;
+}
+
+.card__widget {
+  padding: 70px 50px 150px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 35px;
+}
+
+.card__form {
+  display: flex;
+  position: relative;
+}
+
+.card__search-input {
+  font-size: 30px;
+  font-weight: 400;
+  padding: 17px;
+  border-radius: 35px;
+  max-width: 720px;
+  width: 100%;
+  background-color: rgba(88, 88, 88, 0.25);
+  margin-bottom: 42px;
+}
+
+.card__search-input:focus {
+  outline: 1px solid #ffffff;
+}
+
+.card__search-input:hover {
+  background-color: rgba(88, 88, 88, 0.45);
+}
+
+.card__search-input:active {
+  outline: 3px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card__search-input::placeholder {
+  color: #ffffff;
+}
+
+.card__search-submit {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+}
+
+.card__search-submit:focus {
+  outline: 3px solid rgba(51, 51, 51, 0.4);
+}
+
+.card__search-submit:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.card__search-submit:active {
+  outline: 3px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card__weather-in {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 19px;
+}
+
+.card__temperature {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.card__weather-forecast {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.card__weather-description::first-letter {
+  text-transform: uppercase;
+}
+
+.card__humidity {
+  margin-bottom: 8px;
+}
+
+.card__access-denied {
+  display: none;
+  text-align: center;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+@media (max-width: 768px) or (orientation: landscape) {
+
+  .modal__request-text {
+    font-size: 28px;
+  }
+
+  .modal__permission-text {
+    font-size: 18px;
+  }
+
+  .card__widget {
+    padding: 20px;
+  }
+
+  .card__search-input {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .card__search-submit {
+    width: 50px;
+    height: 50px;
+    top: 5px;
+  }
+
+  .card__weather-in {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .card__temperature {
+    font-size: 30px;
+    margin-bottom: 0px;
+  }
+}

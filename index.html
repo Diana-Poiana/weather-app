@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="modal__window" id="modal">
+    <div class="modal__wrapper">
+      <p class="modal__request-text">
+        Weather For You wants to know your current lacation!
+      </p>
+      <div class="modal__permission">
+        <svg class="modal__location-svg" width="35" height="35" viewBox="0 0 35 35" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.5 19.5854C18.0975 19.5854 18.6891 19.4677 19.2412 19.2391C19.7932 19.0104 20.2948 18.6753 20.7173 18.2527C21.1398 17.8302 21.4749 17.3287 21.7036 16.7766C21.9323 16.2246 22.05 15.6329 22.05 15.0354C22.05 14.4379 21.9323 13.8462 21.7036 13.2942C21.4749 12.7422 21.1398 12.2406 20.7173 11.8181C20.2948 11.3956 19.7932 11.0604 19.2412 10.8318C18.6891 10.6031 18.0975 10.4854 17.5 10.4854C16.2932 10.4854 15.1359 10.9648 14.2826 11.8181C13.4293 12.6714 12.95 13.8287 12.95 15.0354C12.95 16.2421 13.4293 17.3995 14.2826 18.2527C15.1359 19.106 16.2932 19.5854 17.5 19.5854V19.5854Z"
+            stroke="black" stroke-width="1.5" />
+          <path
+            d="M5.27907 12.3812C8.15198 -0.247924 26.8624 -0.23334 29.7207 12.3958C31.3978 19.8042 26.7895 26.075 22.7499 29.9542C21.3383 31.3156 19.4537 32.0763 17.4926 32.0763C15.5315 32.0763 13.6469 31.3156 12.2353 29.9542C8.21032 26.075 3.60198 19.7896 5.27907 12.3812V12.3812Z"
+            stroke="black" stroke-width="1.5" />
+        </svg>
+        <p class="modal__permission-text">
+          Permission to know your location
+        </p>
+      </div>
+      <form class="modal__btns" action="#">
+        <button class="modal__access-allowed" type="button" id="allowed">
+          Allow
+        </button>
+        <button class="modal__access-denied" type="button" id="denied">
+          Block
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card__wrapper">
+    <div class="card__widget">
+
+      <form class="card__form" action="#">
+        <label class="card__form-label" for="input"></label>
+        <input class="card__search-input" id="input" type="text" placeholder="Search..">
+        <button class="card__search-submit" type="button" id="button">
+          <svg class="card__search-svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_6_8)">
+              <path
+                d="M29.5898 25.9395L23.748 20.0977C23.4844 19.834 23.127 19.6875 22.752 19.6875H21.7969C23.4141 17.6191 24.375 15.0176 24.375 12.1875C24.375 5.45508 18.9199 0 12.1875 0C5.45508 0 0 5.45508 0 12.1875C0 18.9199 5.45508 24.375 12.1875 24.375C15.0176 24.375 17.6191 23.4141 19.6875 21.7969V22.752C19.6875 23.127 19.834 23.4844 20.0977 23.748L25.9395 29.5898C26.4902 30.1406 27.3809 30.1406 27.9258 29.5898L29.584 27.9316C30.1348 27.3809 30.1348 26.4902 29.5898 25.9395ZM12.1875 19.6875C8.04492 19.6875 4.6875 16.3359 4.6875 12.1875C4.6875 8.04492 8.03906 4.6875 12.1875 4.6875C16.3301 4.6875 19.6875 8.03906 19.6875 12.1875C19.6875 16.3301 16.3359 19.6875 12.1875 19.6875Z"
+                fill="black" />
+            </g>
+            <defs>
+              <clipPath id="clip0_6_8">
+                <rect width="30" height="30" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </form>
+
+      <div class="card__info-wrapper" id="card-info">
+        <p class="card__weather-in">
+          Weather in
+          <span class="card__location" id="location">
+            -
+          </span>
+        </p>
+        <p class="card__temperature" id="temperature">
+          - °C
+        </p>
+
+        <div class="card__weather-forecast" id="weather-forecast">
+          <img class="card__weather-icon" id="weather-icon" src="" alt="weather icon">
+          <p class="card__weather-description" id="weather-description">
+            -
+          </p>
+        </div>
+
+        <p class="card__humidity">
+          Humidity:
+          <span class="card__humidity-info" id="humidity">
+            -
+          </span>
+        </p>
+        <p class="card__wind-speed">
+          Wind Speed:
+          <span class="card__wind-speed-info" id="wind-speed">
+            -
+          </span>
+        </p>
+      </div>
+
+      <div class="card__access-denied" id="access-denied">
+        You don't have permissision
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
