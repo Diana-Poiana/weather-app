@@ -14,21 +14,21 @@ const denyLocationBtn = document.getElementById('denied');
 const cardInfo = document.getElementById('card-info');
 const accessDenied = document.getElementById('access-denied');
 
-// window.onload = openModalWindow;
+window.onload = openModalWindow;
 
-// function openModalWindow() {
-//   modalWindow.style.display = 'block';
-// }
+function openModalWindow() {
+  modalWindow.style.display = 'block';
+}
 
-// if access denied
+if access denied
 
-// denyLocationBtn.onclick = function () {
-//   modalWindow.style.display = 'none';
-//   cardInfo.style.display = 'none';
-//   accessDenied.style.display = 'block';
-// };
+denyLocationBtn.onclick = function () {
+  modalWindow.style.display = 'none';
+  cardInfo.style.display = 'none';
+  accessDenied.style.display = 'block';
+};
 
-// if access allowed, take user geo position, close modal window
+if access allowed, take user geo position, close modal window
 
 const apiKey = 'f990b6370ad73721dfde441e1c3c5700';
 
