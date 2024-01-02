@@ -1,3 +1,11 @@
+window.addEventListener('DOMContentLoaded', function () {
+  const preloader = document.querySelector('.card__preloader');
+  const cardWidget = document.querySelector('.card__widget');
+
+  preloader.style.display = 'none';
+  cardWidget.style.display = 'block';
+});
+
 // modal window
 
 const modalWindow = document.getElementById('modal');
@@ -6,19 +14,19 @@ const denyLocationBtn = document.getElementById('denied');
 const cardInfo = document.getElementById('card-info');
 const accessDenied = document.getElementById('access-denied');
 
-window.onload = openModalWindow;
+// window.onload = openModalWindow;
 
-function openModalWindow() {
-  modalWindow.style.display = 'block';
-}
+// function openModalWindow() {
+//   modalWindow.style.display = 'block';
+// }
 
 // if access denied
 
-denyLocationBtn.onclick = function () {
-  modalWindow.style.display = 'none';
-  cardInfo.style.display = 'none';
-  accessDenied.style.display = 'block';
-};
+// denyLocationBtn.onclick = function () {
+//   modalWindow.style.display = 'none';
+//   cardInfo.style.display = 'none';
+//   accessDenied.style.display = 'block';
+// };
 
 // if access allowed, take user geo position, close modal window
 
