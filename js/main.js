@@ -21,9 +21,8 @@ navigator.permissions.query({ name: 'geolocation' })
       localStorage.setItem('geoPermission', 'granted');
       getWeatherByGeolocation();
     } else if (permissionStatus.state === 'denied') {
-      cardWidget.style.display = 'none';
-      preloader.style.display = 'none';
-      noPermission.style.display = 'block';
+      localStorage.setItem('geoPermission', 'granted');
+      getWeatherByGeolocation();
     }
   })
   .catch(error => console.error('Permission query error:', error));
