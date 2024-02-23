@@ -14,13 +14,12 @@ const noPermission = document.getElementById('access-denied');
 navigator.permissions.query({ name: 'geolocation' })
   .then(permissionStatus => {
     console.log(permissionStatus.state);
-
-    if (permissionStatus.state === 'granted' || permissionStatus.state === 'prompt') {
+    if (permissionStatus.state === 'granted') {
       localStorage.setItem('geoPermission', 'granted');
-      // Запрос погоды по геолокации
       getWeatherByGeolocation();
-
-      console.log(localStorage.getItem('geoPermission'));
+    } else if (permissionStatus.state === 'prompt') {
+      localStorage.setItem('geoPermission', 'granted');
+      getWeatherByGeolocation();
     } else if (permissionStatus.state === 'denied') {
       cardWidget.style.display = 'none';
       preloader.style.display = 'none';
@@ -28,6 +27,8 @@ navigator.permissions.query({ name: 'geolocation' })
     }
   })
   .catch(error => console.error('Permission query error:', error));
+
+
 
 // update HTML document
 
