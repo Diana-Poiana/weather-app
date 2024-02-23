@@ -30,6 +30,7 @@ body {
   border-radius: 35px;
   display: flex;
   justify-content: center;
+  margin: 0 10px;
 }
 
 .card__span {
@@ -94,6 +95,7 @@ body {
   padding: 70px 50px 150px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 35px;
+  margin: 0 10px;
 }
 
 .card__form {
@@ -189,6 +191,8 @@ body {
   text-align: center;
   margin-top: 90px;
   margin-bottom: 90px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 @media (max-width: 998px) {

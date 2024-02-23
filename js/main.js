@@ -18,11 +18,11 @@ navigator.permissions.query({ name: 'geolocation' })
       localStorage.setItem('geoPermission', 'granted');
       getWeatherByGeolocation();
     } else if (permissionStatus.state === 'prompt') {
-      localStorage.setItem('geoPermission', 'granted');
-      getWeatherByGeolocation();
+
     } else if (permissionStatus.state === 'denied') {
-      localStorage.setItem('geoPermission', 'granted');
-      getWeatherByGeolocation();
+      cardWidget.style.display = 'none';
+      preloader.style.display = 'none';
+      noPermission.style.display = 'block';
     }
   })
   .catch(error => console.error('Permission query error:', error));
